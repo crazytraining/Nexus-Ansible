@@ -1,7 +1,10 @@
 ---
 
-- hosts: dev
+- hosts: all
+  remote_user: root
+  become: yes
+  become_method: sudo  
+
   roles:
   - { role: jhinrichsen.nexus,
-      nexus_version: '2.10.0-02',
-      sudo: yes}
+      nexus_version: '2.10.0-02'}
